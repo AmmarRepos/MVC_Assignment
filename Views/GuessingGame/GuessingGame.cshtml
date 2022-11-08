@@ -1,0 +1,12 @@
+﻿<h1>Guessing game</h1>
+
+@using (Html.BeginForm("GuessingGame", "GuessingGame"))
+{
+    <p>Guess the number</p>
+    <input type="number" name="guessNumber" required>
+    <input type="submit" value="Submit">
+}
+
+@if(ViewBag.Msg != null){
+    <h2>@ViewBag.Msg</h2>
+}

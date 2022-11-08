@@ -1,17 +1,18 @@
 ﻿@{
-    ViewData["Title"] = "About";
+    ViewData["Title"] = "Fever Check";
 }
 
 <div class="text-center">
     <h1 class="display-4">Fever Check Page</h1>
 
-    <form action="/action_page.php">
+@using (Html.BeginForm("Fevercheck", "Doctor")){
         <label for="fname">Temperature:</label><br>
-        <input type="text" id="temp" name="fname" value="30"><br>
+        <input type="text" name="temperature" required><br>
         <input type="submit" value="Check">
-    </form>
+}
 
-    <p>If you click the "Submit" button, you will be fixed.</p>
-</div>
-
+ 
+@if(ViewBag.Msg != null){
+   <p>@ViewBag.Msg</p>
+}
 
