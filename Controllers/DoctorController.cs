@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
+using mvc_cli.Models;
 namespace mvc_cli.Controllers
 {
     public class DoctorController : Controller
@@ -11,9 +11,10 @@ namespace mvc_cli.Controllers
         [HttpPost]
         public IActionResult Fevercheck(string temperature)
         {
-	    string feverMsg;
+	    /* string feverMsg;
 	    feverMsg = (int.Parse(temperature) >= 37) ? "Sick" : "Normal";
-	    ViewBag.Msg = feverMsg;
+	    ViewBag.Msg = feverMsg;*/
+	    ViewBag.Msg = DoctorModel.checkFever(temperature);
             return View();
         }
     }
